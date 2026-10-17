@@ -2,15 +2,14 @@
 
 A unified academic portal for students across KMEC and NGIT. Consolidates attendance tracking, day-wise timeline records, semester examination results, and target attendance planning into a single interface.
 
----
 
-## Screenshots
 
-| Dark Mode | Light Mode |
-| :---: | :---: |
-| ![Dark Mode](public/dark.png) | ![Light Mode](public/light.png) |
+![Dark Mode](public/dark.png)
 
-### Cloudflare Edge Traffic
+![Light Mode](public/light.png)
+
+
+### Cloudflare Traffic
 
 ![Cloudflare Edge Traffic](public/traffic.jpg)
 
