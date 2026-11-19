@@ -1,13 +1,20 @@
 # NGIT Student Tracker
 
-A unified academic portal for students across KMEC and NGIT. Consolidates attendance tracking, day-wise timeline records, semester examination results, and target attendance planning into a single interface.
+A mobile-first academic dashboard for NGIT and KMEC students. Check attendance, review day-wise class records and semester exam results, and plan how to reach your attendance target in one place.
 
+## Screenshots
 
+![Student Tracker in dark mode](public/dark.png)
 
-![Dark Mode](public/dark.png)
+![Student Tracker in light mode](public/light.png)
 
-![Light Mode](public/light.png)
+## Why I Built It
 
+I started this project in my first semester in 2024. The original college portal had a dated interface and didn’t work properly on phones. I built a mobile-first alternative so students could check their overall attendance and subject breakdown at a glance, without needing a desktop.
+
+![Original college portal interface that inspired the tracker](public/0_old_first_version.jpg)
+
+The tracker started as a Python CLI that fetched attendance using a parent's mobile number. I turned that script into an Express API and released the first web version in November 2024. In March 2025, I rebuilt it with Next.js, TypeScript, and Tailwind CSS for a better mobile experience, adding recent searches, attendance charts, and a calculator for questions like “How many classes do I need to attend to reach 75%?”
 
 ### Cloudflare Traffic
 
@@ -33,6 +40,7 @@ High-level architecture overview:
 
 * **Three Lookup Modes:** Search by student roll number, student mobile number (Netra), or parent mobile number (Sanjaya).
 * **Attendance Analytics:** Overall attendance gauge, subject-level breakdowns, and a target calculator to compute required sessions or safe-to-miss margins.
+* **Recent Searches:** Reopen up to 10 recent lookups stored in your browser.
 * **Day-wise Timeline:** Period-by-period status (Present, Absent, No Class) with expandable history.
 * **Token Caching and Resilience:** 6-hour token lifecycle in client storage with automatic re-authentication and retry on 401 expiration errors.
 * **Rate Limiter:** Limits unique student searches to 3 per clock hour to protect upstream infrastructure, with unlimited repeat searches for cached students.
@@ -41,7 +49,7 @@ High-level architecture overview:
 
 ## Tech Stack
 
-* **Frontend:** Next.js 15 (Pages Router), React 19, TypeScript, Tailwind CSS, Recharts, Framer Motion
+* **Frontend:** Next.js 15 (Pages Router), React 19, TypeScript, Tailwind CSS v4, Recharts, Framer Motion
 * **Edge and Security:** Cloudflare Workers, Cloudflare Turnstile
 * **Backend:** AWS EC2 (Ubuntu Linux), Node.js, Python
 * **Databases:** PostgreSQL, Supabase
